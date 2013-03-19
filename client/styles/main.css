@@ -84,6 +84,15 @@ textarea {
 	padding:3em
 }
 
+/* loading */
+#loading {
+	width: 100;
+	text-align: center;
+	margin-top: 100px;
+	font-weight: bold;
+	font-size: 24px;
+}
+
 /* prettyprint styles */
 .prettyprint ol {
 	color: #696969;

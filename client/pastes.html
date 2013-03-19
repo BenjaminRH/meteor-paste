@@ -2,7 +2,11 @@
 	<title>Meteor Paste</title>
 </head>
 
-<body>{{renderPage}}</body>
+<body>{{> setup}}</body>
+
+<template name="setup">
+	{{renderPage}}
+</template>
 
 <template name="new">
 	<div class="header">
@@ -12,7 +16,7 @@
 	</div>
 
 	{{#with forked_paste}}
-		<textarea id="pastebin" placeholder="Paste code here (CTRL+V)">{{code}}</textarea>
+		<textarea id="pastebin" placeholder="Paste code here">{{code}}</textarea>
 	{{/with}}
 </template>
 
@@ -26,12 +30,14 @@
 	</div>
 
 	{{#with paste}}
+		<div id="loading">Loading...</div>
 		<pre class="prettyprint linenums" id="code">{{code}}</pre>
 	{{/with}}
 </template>
 
 <template name="view_raw">
 	{{#with paste}}
+		<div id="loading">Loading...</div>
 		<pre style="word-wrap: break-word; white-space: pre-wrap" id="code">{{code}}</pre>
 	{{/with}}
 </template>
