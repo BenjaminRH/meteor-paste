@@ -1,0 +1,37 @@
+<head>
+	<title>Meteor Paste</title>
+</head>
+
+<body>{{renderPage}}</body>
+
+<template name="new">
+	<div class="header">
+		<ul class="buttons">
+			<li><a href="#save" id="save">Save</a></li>
+		</ul>
+	</div>
+
+	{{#with forked_paste}}
+		<textarea id="pastebin" placeholder="Paste code here (CTRL+V)">{{code}}</textarea>
+	{{/with}}
+</template>
+
+<template name="view">
+	<div class="header">
+		<ul class="buttons">
+			<li><a href="/new" id="new">New</a></li>
+			<li><a href="#fork" id="fork">Fork</a></li>
+			<li><a href="#raw" id="raw">Raw</a></li>
+		</ul>
+	</div>
+
+	{{#with paste}}
+		<pre class="prettyprint linenums" id="code">{{code}}</pre>
+	{{/with}}
+</template>
+
+<template name="view_raw">
+	{{#with paste}}
+		<pre style="word-wrap: break-word; white-space: pre-wrap" id="code">{{code}}</pre>
+	{{/with}}
+</template>
