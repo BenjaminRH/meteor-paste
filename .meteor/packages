@@ -6,3 +6,5 @@
 preserve-inputs
 router
 jquery
+spiderable
+appcache

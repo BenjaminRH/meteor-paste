@@ -72,9 +72,21 @@ Template.new.helpers({
 
 // View
 Template.view.rendered = function() {
-	$('#code').live('DOMSubtreeModified DOMAttrModified', function(event) {
-		$('#loading').remove();
-	});
+	var checked = 0;
+	var checkLoaded = Meteor.setInterval(function() {
+		var el = $('ol.linenums li:first-child span');
+		if(el.length > 0 && el.text() != ' ') {
+			$('#loading').remove();
+			Meteor.clearInterval(checkLoaded);
+		}
+
+		checked += 1;
+		if(checked > 120) {
+			$('#loading').text('Error loading');
+			Meteor.clearInterval(checkLoaded);
+			Meteor.Router.to('/');
+		}
+	}, 250);
 	prettyPrint();
 };
 

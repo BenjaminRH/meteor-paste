@@ -91,9 +91,14 @@ textarea {
 	margin-top: 100px;
 	font-weight: bold;
 	font-size: 24px;
+	z-index: 999;
 }
 
 /* prettyprint styles */
 .prettyprint ol {
 	color: #696969;
+}
+
+.prettyprint {
+	overflow: auto;
 }
