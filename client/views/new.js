@@ -5,9 +5,12 @@ Template.new.rendered = function() {
 Template.new.events({
 	'click #save': function(e, t) {
 		e.preventDefault();
+		Session.set('working', true)
 		var code = $('#pastebin').val();
 		if(code.length < 50000) {
 			Pastes.insert({ code: code }, function(error, result) {
+				Session.set('working', false);
+				
 				if(error) {
 					alert('There was a problem saving your paste');
 				} else {
@@ -24,5 +27,8 @@ Template.new.events({
 Template.new.helpers({
 	forked_paste: function() {
 		return Session.get('forked-paste') ? Pastes.findOne({ _id: Session.get('forked-paste') }) : { code: '' };
+	},
+	working: function() {
+		return Session.get('working');
 	}
 });

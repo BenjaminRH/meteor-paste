@@ -5,6 +5,12 @@
 		</ul>
 	</div>
 
+	{{#if working}}
+	<div class="loading">
+		<h2>Working...</h2>
+	</div>
+	{{/if}}
+
 	{{#with forked_paste}}
 	<textarea id="pastebin" placeholder="Paste code here">{{code}}</textarea>
 	{{/with}}

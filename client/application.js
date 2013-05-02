@@ -19,4 +19,5 @@ Meteor.startup(function() {
 	Session.setDefault('paste', false);
 	Session.setDefault('forked-paste', false);
 	Session.setDefault('loading', false);
+	Session.setDefault('working', false);
 });
