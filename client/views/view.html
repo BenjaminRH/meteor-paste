@@ -1,0 +1,19 @@
+<template name="view">
+	<div class="header">
+		<ul class="buttons">
+			<li><a href="/new" id="new">New</a></li>
+			<li><a href="#fork" id="fork">Fork</a></li>
+			<li><a href="#raw" id="raw">Raw</a></li>
+		</ul>
+	</div>
+
+	{{#if loading}}
+	<div class="loading">
+		<h2>Loading...</h2>
+	</div>
+	{{/if}}
+
+	{{#with paste}}
+	<pre class="prettyprint linenums" id="code"><code>{{code}}</code></pre>
+	{{/with}}
+</template>

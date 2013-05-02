@@ -1,0 +1,11 @@
+<template name="new">
+	<div class="header">
+		<ul class="buttons">
+			<li><a href="#save" id="save">Save</a></li>
+		</ul>
+	</div>
+
+	{{#with forked_paste}}
+	<textarea id="pastebin" placeholder="Paste code here">{{code}}</textarea>
+	{{/with}}
+</template>

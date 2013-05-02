@@ -1,5 +1,3 @@
-Pastes = new Meteor.Collection('pastes');
-
 Pastes.allow({
 	insert: function(userId, doc) {
 		return doc.code.length < 50000;

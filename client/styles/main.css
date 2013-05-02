@@ -8,7 +8,7 @@ body {
 /* header */
 .header {
 	z-index:999;
-	padding:.4em;
+	padding:.4em .7em;
 	position:fixed;
 	top:0;
 	right:0;
@@ -85,18 +85,18 @@ textarea {
 }
 
 /* loading */
-#loading {
+.loading {
 	width: 100;
 	text-align: center;
 	margin-top: 100px;
 	font-weight: bold;
 	font-size: 24px;
-	z-index: 999;
 }
 
 /* prettyprint styles */
 .prettyprint ol {
 	color: #696969;
+	margin-left: 25px;
 }
 
 .prettyprint {

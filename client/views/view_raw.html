@@ -1,0 +1,9 @@
+<template name="view_raw">
+	{{#with paste}}
+		<pre style="word-wrap: break-word; white-space: pre-wrap" id="code">{{code}}</pre>
+	{{/with}}
+
+	{{#if loading}}
+	<h2>Loading...</h2>
+	{{/if}}
+</template>
