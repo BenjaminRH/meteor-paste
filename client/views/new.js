@@ -12,12 +12,15 @@ Template.new.events({
 				Session.set('working', false);
 				
 				if(error) {
+					mixpanel.track('Error Saving Paste');
 					alert('There was a problem saving your paste');
 				} else {
-					Meteor.Router.to(result);
+					mixpanel.track('Saved Paste');
+					Meteor.Router.to('/' + result);
 				}
 			});
 		} else {
+			mixpanel.track('Char Limit Reached Saving Paste');
 			alert('There cannot be more than 50,000 characters in a paste. You have ' + code.length);
 		}
 		$('#pastebin').focus();

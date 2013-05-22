@@ -1,6 +1,7 @@
 {
   "packages": {
     "router": {},
-    "tracker": {}
+    "tracker": {},
+    "mixpanel": {}
   }
 }

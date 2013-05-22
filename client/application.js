@@ -20,4 +20,7 @@ Meteor.startup(function() {
 	Session.setDefault('forked-paste', false);
 	Session.setDefault('loading', false);
 	Session.setDefault('working', false);
+
+	// Set up tracking
+	mixpanel.init('6cf4b20e5914d0d1bf3ec1e3ebc627f0');
 });
